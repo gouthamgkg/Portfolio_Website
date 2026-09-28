@@ -6,7 +6,7 @@
 
   <br/>
 
-  [![Portfolio Website](https://img.shields.io/badge/Portfolio-Live%20Demo-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white)]([https://gouthamgkg.github.io/](https://gouthamankg.netlify.app)
+  [![Portfolio Website](https://img.shields.io/badge/Portfolio-Live%20Demo-6366f1?style=for-the-badge&logo=google-chrome&logoColor=white)](https://gouthamankg.netlify.app)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-Gouthaman%20K%20G-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gouthamkg/)
   [![GitHub](https://img.shields.io/badge/GitHub-gouthamgkg-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/gouthamgkg)
   [![Email](https://img.shields.io/badge/Email-goutham7113%40gmail.com-ea4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:goutham7113@gmail.com)
