@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Portfolio of Gouthaman K G - ASP.NET Software Engineer & Web Developer with expertise in FinTech, ERP systems, SQL Server, and enterprise web application development.">
+  <meta name="keywords"
+    content="Gouthaman K G, Software Engineer, ASP.NET Developer, C#, SQL Server, LINQ, jQuery, HTML, CSS, Kochi Kerala, Portfolio, FinTech, Web Application Developer">
+  <meta name="author" content="Gouthaman K G">
+  <title>Gouthaman K G | Software Engineer & Full-Stack Developer</title>
+
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236366f1'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='sans-serif' font-weight='900' font-size='42'>GK</text></svg>">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Google Material Symbols Outlined -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <!-- FontAwesome for brand icons (LinkedIn, GitHub) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-theme="dark">
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Custom Cursor Elements (Desktop) -->
+  <div id="cursor-dot" class="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-outline" class="cursor-outline" aria-hidden="true"></div>
+
+  <!-- Ambient 3D Glowing Background Canvas & Orbs -->
+  <div class="ambient-mesh" aria-hidden="true">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+    <canvas id="three-bg-canvas"></canvas>
+  </div>
+
+  <!-- Material Navigation Bar -->
+  <header class="md-header" id="main-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="Gouthaman K G Home">
+        <span class="logo-box">GKG</span>
+        <span class="logo-text">Gouthaman K G</span>
+      </a>
+
+      <!-- Desktop Nav Menu -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#about" class="nav-link"><span
+                class="material-symbols-outlined nav-icon">person</span>About</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link"><span
+                class="material-symbols-outlined nav-icon">work_history</span>Experience</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link"><span
+                class="material-symbols-outlined nav-icon">rocket_launch</span>Projects</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link"><span
+                class="material-symbols-outlined nav-icon">code_blocks</span>Skills</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link"><span
+                class="material-symbols-outlined nav-icon">school</span>Education</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link"><span
+                class="material-symbols-outlined nav-icon">mail</span>Contact</a></li>
+        </ul>
+        <span class="nav-pill-indicator" id="nav-indicator" aria-hidden="true"></span>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="header-actions">
+        <a href="#contact" class="md-btn md-btn-tonal header-contact-btn ripple-btn">
+          <span class="material-symbols-outlined">send</span>
+          <span>Let's Talk</span>
+        </a>
+        <button id="theme-toggle" class="icon-btn ripple-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <span class="material-symbols-outlined theme-icon">light_mode</span>
+        </button>
+        <button id="menu-toggle" class="icon-btn mobile-menu-btn ripple-btn" aria-label="Open Navigation Menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div id="mobile-drawer" class="mobile-drawer" aria-hidden="true">
+    <div class="drawer-backdrop" id="drawer-backdrop"></div>
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <div class="brand-logo">
+          <span class="logo-box">GK</span>
+          <span class="logo-text">Gouthaman</span>
+        </div>
+        <button id="drawer-close" class="icon-btn ripple-btn" aria-label="Close Navigation Menu">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <nav class="drawer-nav">
+        <a href="#about" class="drawer-link"><span class="material-symbols-outlined">person</span>About</a>
+        <a href="#experience" class="drawer-link"><span
+            class="material-symbols-outlined">work_history</span>Experience</a>
+        <a href="#projects" class="drawer-link"><span class="material-symbols-outlined">rocket_launch</span>Projects</a>
+        <a href="#skills" class="drawer-link"><span class="material-symbols-outlined">code_blocks</span>Skills</a>
+        <a href="#education" class="drawer-link"><span class="material-symbols-outlined">school</span>Education &
+          Awards</a>
+        <a href="#contact" class="drawer-link"><span class="material-symbols-outlined">mail</span>Contact</a>
+      </nav>
+      <div class="drawer-footer">
+        <a href="https://www.linkedin.com/in/gouthamkg/" target="_blank" rel="noopener noreferrer"
+          class="social-chip ripple-btn">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/gouthamgkg" target="_blank" rel="noopener noreferrer"
+          class="social-chip ripple-btn">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <!-- Hero Text Content -->
+        <div class="hero-content reveal-on-scroll">
+          <!-- <div class="status-badge-wrapper">
+            <span class="md-badge pulse-badge">
+              <span class="pulse-dot"></span>
+              Available for Full-Stack & Engineering Roles
+            </span>
+          </div> -->
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Gouthaman K G</span>
+          </h1>
+
+          <div class="hero-role-wrapper">
+            <span class="role-prefix">Developing</span>
+            <span class="dynamic-typing" id="dynamic-typing">Enterprise ASP.NET & Full-Stack Solutions</span>
+            <span class="cursor-blink">|</span>
+          </div>
+
+          <p class="hero-description">
+            Software engineer with <strong>4+ years of professional expertise</strong> delivering robust web
+            applications, high-security <strong>NBFC & Chitty FinTech engines</strong>, and comprehensive <strong>ERP
+              management
+              platforms</strong>. Passionate about scalable architectures, performance optimization, and intuitive user
+            experiences.
+          </p>
+
+          <!-- Core Specialization Tags -->
+          <div class="hero-tech-strip">
+            <span class="tech-strip-label">Core Specialization:</span>
+            <div class="tech-strip-tags">
+              <span class="tech-strip-badge"><i class="fa-brands fa-microsoft"></i> ASP.NET & C#</span>
+              <span class="tech-strip-badge"><span class="material-symbols-outlined">database</span> SQL Server</span>
+              <span class="tech-strip-badge"><span class="material-symbols-outlined">account_balance</span> FinTech &
+                NBFC Systems</span>
+              <span class="tech-strip-badge"><span class="material-symbols-outlined">data_object</span> LINQ & REST
+                APIs</span>
+              <span class="tech-strip-badge"><span class="material-symbols-outlined">javascript</span> JavaScript &
+                jQuery</span>
+              <span class="tech-strip-badge"><span class="material-symbols-outlined">html</span> HTML5 & CSS3</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#projects" class="md-btn md-btn-primary ripple-btn">
+              <span class="material-symbols-outlined">code</span>
+              <span>View Projects</span>
+            </a>
+            <a href="#contact" class="md-btn md-btn-outlined ripple-btn">
+              <span class="material-symbols-outlined">chat</span>
+              <span>Get In Touch</span>
+            </a>
+            <button id="hero-resume-btn" class="md-btn md-btn-tonal ripple-btn" title="View Resume Overview">
+              <span class="material-symbols-outlined">description</span>
+              <span>Resume Brief</span>
+            </button>
+          </div>
+
+          <div class="hero-socials">
+            <span class="social-label">Connect:</span>
+            <a href="https://www.linkedin.com/in/gouthamkg/" target="_blank" rel="noopener noreferrer"
+              class="social-circle-btn ripple-btn" aria-label="LinkedIn Profile" title="LinkedIn Profile">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/gouthamgkg" target="_blank" rel="noopener noreferrer"
+              class="social-circle-btn ripple-btn" aria-label="GitHub Profile" title="GitHub Profile">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="mailto:goutham7113@gmail.com" class="social-circle-btn ripple-btn" aria-label="Email Gouthaman"
+              title="Email Gouthaman">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="tel:+917994155476" class="social-circle-btn ripple-btn" aria-label="Call Gouthaman"
+              title="Call +91 7994155476">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Developer Animation in Sleek Glass IDE Window -->
+        <div class="hero-illustration-wrapper reveal-on-scroll">
+          <div class="hero-window-frame md-elevation-3 tilt-3d-card" data-tilt>
+            <div class="window-header">
+              <div class="window-dots">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-amber"></span>
+                <span class="dot dot-green"></span>
+              </div>
+              <div class="window-title">
+                <span class="material-symbols-outlined window-icon">terminal</span>
+                <span>goutham_workspace.live</span>
+              </div>
+              <div class="window-status-pill">
+                <span class="status-live-dot"></span>
+                <span>Active</span>
+              </div>
+            </div>
+            <div class="window-body">
+              <img src="assets/images/developer.gif" alt="Software Engineer at Work Animation" class="hero-gif-art"
+                loading="eager" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Down Cue -->
+      <a href="#stats" class="scroll-cue" aria-label="Scroll to key metrics">
+        <span class="scroll-mouse">
+          <span class="scroll-wheel"></span>
+        </span>
+        <span class="scroll-cue-text">Scroll to explore</span>
+      </a>
+    </section>
+
+    <!-- KEY STATS & METRICS BAR (Interactive Counters) -->
+    <section id="stats" class="stats-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card md-elevation-1 tilt-3d-card" data-tilt>
+            <div class="stat-icon-wrapper">
+              <span class="material-symbols-outlined stat-icon">history_edu</span>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value-row">
+                <span class="stat-number" data-target="4">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Years of Industry Experience</span>
+            </div>
+          </div>
+
+          <div class="stat-card md-elevation-1 tilt-3d-card" data-tilt>
+            <div class="stat-icon-wrapper">
+              <span class="material-symbols-outlined stat-icon">account_balance</span>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value-row">
+                <span class="stat-number" data-target="10">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Enterprise & FinTech Systems</span>
+            </div>
+          </div>
+
+          <div class="stat-card md-elevation-1 tilt-3d-card" data-tilt>
+            <div class="stat-icon-wrapper">
+              <span class="material-symbols-outlined stat-icon">code_blocks</span>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value-row">
+                <span class="stat-number" data-target="15">0</span>
+                <span class="stat-suffix">+</span>
+              </div>
+              <span class="stat-label">Core Technologies & Frameworks</span>
+            </div>
+          </div>
+
+          <div class="stat-card md-elevation-1 tilt-3d-card" data-tilt>
+            <div class="stat-icon-wrapper">
+              <span class="material-symbols-outlined stat-icon">verified</span>
+            </div>
+            <div class="stat-info">
+              <div class="stat-value-row">
+                <span class="stat-number" data-target="100">0</span>
+                <span class="stat-suffix">%</span>
+              </div>
+              <span class="stat-label">Code Quality & Optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section section-padding">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle"><span class="material-symbols-outlined">badge</span> Background &
+            Profile</span>
+          <h2 class="section-title">Engineering Reliable Digital Infrastructure</h2>
+          <p class="section-lead">A blend of deep backend logic, disciplined database modeling, and sleek modern UI
+            experiences.</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Bio Narrative -->
+          <div class="about-text-col reveal-on-scroll">
+            <div class="about-card md-card md-elevation-2">
+              <div class="about-header-pill">
+                <span class="material-symbols-outlined">psychology</span>
+                <span>Engineering Philosophy</span>
+              </div>
+              <h3 class="about-heading">Software Developer based in Kerala, India</h3>
+              <p>
+                I am a focused software engineer with solid foundations in computer science, agile methodologies, and
+                full-lifecycle application delivery.
+                Currently engineering mission-critical web applications at <strong>Elioenai Technologies</strong> in
+                Kochi, Kerala.
+              </p>
+              <p>
+                My daily work centers on building secure, multi-tier web platforms for <strong>NBFCs (Non-Banking
+                  Financial Companies), Chitty funds, and NIDHI institutions</strong>.
+                I specialize in turning intricate financial regulations and enterprise workflows into clean, automated,
+                and performant web solutions.
+              </p>
+
+              <!-- Quick Attributes Matrix -->
+              <div class="attributes-grid">
+                <div class="attribute-item">
+                  <span class="material-symbols-outlined attr-icon">location_on</span>
+                  <div class="attr-content">
+                    <span class="attr-title">Location</span>
+                    <span class="attr-val">Vaikom, Kottayam, Kerala (686144)</span>
+                  </div>
+                </div>
+
+                <div class="attribute-item">
+                  <span class="material-symbols-outlined attr-icon">mail</span>
+                  <div class="attr-content">
+                    <span class="attr-title">Direct Email</span>
+                    <a href="mailto:goutham7113@gmail.com" class="attr-val link-accent">goutham7113@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="attribute-item">
+                  <span class="material-symbols-outlined attr-icon">call</span>
+                  <div class="attr-content">
+                    <span class="attr-title">Contact Phone</span>
+                    <a href="tel:+917994155476" class="attr-val link-accent">+91 7994155476</a>
+                  </div>
+                </div>
+
+                <div class="attribute-item">
+                  <span class="material-symbols-outlined attr-icon">translate</span>
+                  <div class="attr-content">
+                    <span class="attr-title">Languages</span>
+                    <span class="attr-val">English, Malayalam, Hindi</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Interactive Action Buttons -->
+              <div class="about-cta-row">
+                <button class="md-btn md-btn-tonal ripple-btn copy-email-btn" data-clipboard="goutham7113@gmail.com">
+                  <span class="material-symbols-outlined">content_copy</span>
+                  <span>Copy Email</span>
+                </button>
+                <a href="https://www.linkedin.com/in/gouthamkg/" target="_blank" rel="noopener noreferrer"
+                  class="md-btn md-btn-outlined ripple-btn">
+                  <i class="fa-brands fa-linkedin"></i>
+                  <span>LinkedIn Profile</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlight Cards / Pillar Highlights -->
+          <div class="about-cards-col reveal-on-scroll">
+            <div class="pillar-card md-elevation-1 tilt-3d-card" data-tilt>
+              <div class="pillar-icon-box fin-gradient">
+                <span class="material-symbols-outlined">shield_lock</span>
+              </div>
+              <div class="pillar-info">
+                <h4>FinTech & High-Compliance Systems</h4>
+                <p>Architected transaction engines, loan ledgers, and chitty auction management systems adhering to
+                  strict accounting and audit standards.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card md-elevation-1 tilt-3d-card" data-tilt>
+              <div class="pillar-icon-box erp-gradient">
+                <span class="material-symbols-outlined">hub</span>
+              </div>
+              <div class="pillar-info">
+                <h4>ERP & Workflow Automation</h4>
+                <p>Designed end-to-end HR management, stock inventory modules, and automated customer ticketing tracking
+                  platforms that save administrative hours.</p>
+              </div>
+            </div>
+
+            <div class="pillar-card md-elevation-1 tilt-3d-card" data-tilt>
+              <div class="pillar-icon-box code-gradient">
+                <span class="material-symbols-outlined">integration_instructions</span>
+              </div>
+              <div class="pillar-info">
+                <h4>Clean Architecture & API Integration</h4>
+                <p>Expertise integrating payment gateways, verification APIs, and REST endpoints while conducting code
+                  refactoring for high throughput.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="experience-section section-padding">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle"><span class="material-symbols-outlined">timeline</span> Career
+            Progression</span>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-lead">Hands-on software development across enterprise applications and mobile architectures.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-track" aria-hidden="true"></div>
+
+          <!-- Role 1: Elioenai Technologies -->
+          <div class="timeline-card-wrapper reveal-on-scroll">
+            <div class="timeline-marker">
+              <span class="material-symbols-outlined">business_center</span>
+            </div>
+            <div class="timeline-card md-card md-elevation-2 tilt-3d-card" data-tilt>
+              <div class="timeline-card-header">
+                <div class="role-company">
+                  <h3 class="role-title">ASP.Net Software Developer</h3>
+                  <div class="company-badge">
+                    <span class="material-symbols-outlined">domain</span>
+                    <span>Elioenai Technologies</span>
+                    <span class="loc-tag">Kochi, Kerala</span>
+                  </div>
+                </div>
+                <div class="timeline-time-badge">
+                  <span class="material-symbols-outlined">calendar_today</span>
+                  <span>11/2021 – Present</span>
+                  <span class="active-pulse-badge">Active</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <p class="role-summary-tag">
+                  Leading web application development and backend architecture for financial institutions and enterprise
+                  ERP customers.
+                </p>
+                <ul class="timeline-bullets">
+                  <li>
+                    <span class="material-symbols-outlined bullet-icon">check_circle</span>
+                    <span><strong>FinTech & Banking Solutions:</strong> Designed and developed comprehensive web-based
+                      applications for NBFC, Chitty funds, and NIDHI companies, facilitating secure ledger calculations
+                      and loan processes.</span>
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined bullet-icon">check_circle</span>
+                    <span><strong>HRMS & ERP Suites:</strong> Created robust HR management and ERP systems for efficient
+                      staff scheduling, payroll computations, and multi-warehouse stock management.</span>
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined bullet-icon">check_circle</span>
+                    <span><strong>Ticketing & Workflow Automation:</strong> Developed integrated work management and
+                      ticketing system to improve customer query resolution and internal task tracking.</span>
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined bullet-icon">check_circle</span>
+                    <span><strong>Third-Party Integrations:</strong> Integrated secure external APIs (SMS gateways,
+                      payment processors, authentication) to amplify system functionality and user experience.</span>
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined bullet-icon">check_circle</span>
+                    <span><strong>Code Reviews & Quality Assurance:</strong> Collaborated with cross-functional
+                      engineering peers on code reviews, bug documentation, and software testing resolution.</span>
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined bullet-icon">check_circle</span>
+                    <span><strong>Performance Refactoring:</strong> Optimized core database queries, LINQ statements,
+                      and frontend interactions to reduce page loading latency.</span>
+                  </li>
+                </ul>
+
+                <div class="timeline-tech-stack">
+                  <span class="tech-tag">C#</span>
+                  <span class="tech-tag">ASP.NET MVC</span>
+                  <span class="tech-tag">SQL Server</span>
+                  <span class="tech-tag">LINQ</span>
+                  <span class="tech-tag">JavaScript / jQuery</span>
+                  <span class="tech-tag">REST APIs</span>
+                  <span class="tech-tag">Agile Scrum</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2: iROID Technologies (Internship) -->
+          <div class="timeline-card-wrapper reveal-on-scroll">
+            <div class="timeline-marker intern-marker">
+              <span class="material-symbols-outlined">phone_android</span>
+            </div>
+            <div class="timeline-card md-card md-elevation-2 tilt-3d-card" data-tilt>
+              <div class="timeline-card-header">
+                <div class="role-company">
+                  <h3 class="role-title">Android Development Intern</h3>
+                  <div class="company-badge">
+                    <span class="material-symbols-outlined">devices</span>
+                    <span>iROID Technologies</span>
+                    <span class="loc-tag">Kochi, Kerala</span>
+                  </div>
+                </div>
+                <div class="timeline-time-badge intern-time">
+                  <span class="material-symbols-outlined">schedule</span>
+                  <span>Intensive Work Experience</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <p class="role-summary-tag">
+                  Focused on modern mobile application UI engineering and core Android system architecture.
+                </p>
+                <ul class="timeline-bullets">
+                  <li>
+                    <span class="material-symbols-outlined bullet-icon">check_circle</span>
+                    <span>Designed and programmed responsive mobile application interfaces tailored for multi-screen
+                      Android devices.</span>
+                  </li>
+                  <li>
+                    <span class="material-symbols-outlined bullet-icon">check_circle</span>
+                    <span>Implemented activities, fragments, and background service event handling following Android
+                      best practices.</span>
+                  </li>
+                </ul>
+
+                <div class="timeline-tech-stack">
+                  <span class="tech-tag">Android SDK</span>
+                  <span class="tech-tag">Java / Kotlin</span>
+                  <span class="tech-tag">XML Layouts</span>
+                  <span class="tech-tag">Mobile UI/UX</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section section-padding">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle"><span class="material-symbols-outlined">view_in_ar</span> Work &
+            Creations</span>
+          <h2 class="section-title">Featured Engineering Projects</h2>
+          <p class="section-lead">Explore selected enterprise platforms, full-stack systems, and academic capstones.</p>
+        </div>
+
+        <!-- Material 3 Segmented Filter Tabs -->
+        <div class="filter-tabs-wrapper reveal-on-scroll">
+          <div class="segmented-control" role="tablist" aria-label="Filter projects">
+            <button class="segment-btn active ripple-btn" data-filter="all" role="tab" aria-selected="true">All
+              Systems</button>
+            <button class="segment-btn ripple-btn" data-filter="fintech" role="tab" aria-selected="false">FinTech &
+              Banking</button>
+            <button class="segment-btn ripple-btn" data-filter="erp" role="tab" aria-selected="false">HRMS &
+              ERP</button>
+            <button class="segment-btn ripple-btn" data-filter="ticketing" role="tab" aria-selected="false">Work
+              Management</button>
+            <button class="segment-btn ripple-btn" data-filter="automation" role="tab" aria-selected="false">API &
+              Automation</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid">
+          <!-- Project 1: FinTech & NBFC Core (Elioenai) -->
+          <div class="project-card md-card md-elevation-2 tilt-3d-card reveal-on-scroll" data-category="fintech"
+            data-tilt>
+            <div class="project-media fintech-media">
+              <img src="assets/images/project_fintech.svg" alt="NBFC, Chitty & NIDHI Banking Suite Illustration"
+                class="project-illustration" loading="lazy" />
+              <div class="project-badge-pill">Enterprise FinTech</div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">NBFC, Chitty & NIDHI Banking Suite</h3>
+                <span class="project-duration">Enterprise Production</span>
+              </div>
+              <p class="project-desc">
+                Mission-critical financial web portal engineered for multi-branch NBFC and chitty fund organizations.
+                Features automated chitty auction computations, EMI amortization tables, loan disbursements, and
+                rigorous regulatory audit logs.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Multi-branch
+                  accounting & financial ledgers</div>
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Automated chitty
+                  auction & dividend engine</div>
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Third-party payment
+                  & SMS API gateway</div>
+              </div>
+              <div class="project-tags">
+                <span class="tech-pill">ASP.NET MVC</span>
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">SQL Server</span>
+                <span class="tech-pill">LINQ</span>
+                <span class="tech-pill">jQuery</span>
+                <span class="tech-pill">HTML5 / CSS3</span>
+              </div>
+              <div class="project-actions">
+                <button class="md-btn md-btn-tonal project-modal-trigger ripple-btn" data-project="fintech">
+                  <span class="material-symbols-outlined">visibility</span> Details
+                </button>
+                <a href="#contact" class="icon-link-btn" title="Inquire about this project">
+                  <span class="material-symbols-outlined">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Enterprise HRMS & Workforce ERP -->
+          <div class="project-card md-card md-elevation-2 tilt-3d-card reveal-on-scroll" data-category="erp" data-tilt>
+            <div class="project-media erp-media">
+              <img src="assets/images/project_erp.svg" alt="HR Management & Inventory ERP Illustration"
+                class="project-illustration" loading="lazy" />
+              <div class="project-badge-pill">Enterprise ERP</div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">HR Management & Inventory ERP</h3>
+                <span class="project-duration">Enterprise Production</span>
+              </div>
+              <p class="project-desc">
+                Unified enterprise suite combining staff payroll processing, attendance logs, leave management,
+                and multi-location warehouse stock tracking to optimize operational overhead and supply-chain
+                transparency.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Automated staff
+                  attendance & payroll calculation</div>
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Multi-warehouse
+                  stock movement & audit tracking</div>
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Role-based access
+                  control & permission hierarchy</div>
+              </div>
+              <div class="project-tags">
+                <span class="tech-pill">ASP.NET</span>
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">SQL Server</span>
+                <span class="tech-pill">LINQ</span>
+                <span class="tech-pill">jQuery</span>
+                <span class="tech-pill">CSS3</span>
+              </div>
+              <div class="project-actions">
+                <button class="md-btn md-btn-tonal project-modal-trigger ripple-btn" data-project="erp">
+                  <span class="material-symbols-outlined">visibility</span> Architecture
+                </button>
+                <a href="#contact" class="icon-link-btn" title="Contact developer">
+                  <span class="material-symbols-outlined">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Work Management & Ticketing System -->
+          <div class="project-card md-card md-elevation-2 tilt-3d-card reveal-on-scroll" data-category="ticketing"
+            data-tilt>
+            <div class="project-media ticketing-media">
+              <img src="assets/images/project_ticketing.svg" alt="Work Management & Ticketing System Illustration"
+                class="project-illustration" loading="lazy" />
+              <div class="project-badge-pill">Task Operations</div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Work Management & Ticketing System</h3>
+                <span class="project-duration">Enterprise Production</span>
+              </div>
+              <p class="project-desc">
+                Centralized work tracking and ticketing portal that accelerates internal task assignment, monitors SLA
+                response metrics,
+                and provides real-time status visibility across software support and client service teams.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Automated task
+                  tracking & SLA priority routing</div>
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Real-time ticket
+                  lifecycle & escalation alerts</div>
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Performance
+                  analytics & resolution auditing</div>
+              </div>
+              <div class="project-tags">
+                <span class="tech-pill">ASP.NET MVC</span>
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">SQL Server</span>
+                <span class="tech-pill">JavaScript</span>
+                <span class="tech-pill">jQuery</span>
+                <span class="tech-pill">HTML5</span>
+              </div>
+              <div class="project-actions">
+                <button class="md-btn md-btn-tonal project-modal-trigger ripple-btn" data-project="ticketing">
+                  <span class="material-symbols-outlined">visibility</span> Overview
+                </button>
+                <a href="#contact" class="icon-link-btn" title="Contact developer">
+                  <span class="material-symbols-outlined">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Third-Party API Integration & Automation -->
+          <div class="project-card md-card md-elevation-2 tilt-3d-card reveal-on-scroll" data-category="automation"
+            data-tilt>
+            <div class="project-media automation-media">
+              <img src="assets/images/project_automation.svg" alt="Third-Party API & Automation Suite Illustration"
+                class="project-illustration" loading="lazy" />
+              <div class="project-badge-pill">Integration Engine</div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-title">Third-Party API & Automation Suite</h3>
+                <span class="project-duration">Enterprise Production</span>
+              </div>
+              <p class="project-desc">
+                High-performance backend integration layer built to connect payment processors, SMS notification
+                services,
+                and automated scheduled routines to eliminate manual bookkeeping and streamline user interactions.
+              </p>
+              <div class="project-highlights">
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Third-party payment
+                  gateway integration</div>
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Automated SMS &
+                  transactional notification dispatch</div>
+                <div class="highlight-item"><span class="material-symbols-outlined">verified</span> Code optimization &
+                  scheduled background jobs</div>
+              </div>
+              <div class="project-tags">
+                <span class="tech-pill">C#</span>
+                <span class="tech-pill">ASP.NET Web API</span>
+                <span class="tech-pill">SQL Server</span>
+                <span class="tech-pill">LINQ</span>
+                <span class="tech-pill">REST APIs</span>
+              </div>
+              <div class="project-actions">
+                <button class="md-btn md-btn-tonal project-modal-trigger ripple-btn" data-project="automation">
+                  <span class="material-symbols-outlined">visibility</span> Architecture
+                </button>
+                <a href="#contact" class="icon-link-btn" title="Contact developer">
+                  <span class="material-symbols-outlined">arrow_outward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS & PROFICIENCIES SECTION -->
+    <section id="skills" class="skills-section section-padding">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle"><span class="material-symbols-outlined">construction</span> Technical
+            Arsenal</span>
+          <h2 class="section-title">Skills & Engineering Capabilities</h2>
+          <p class="section-lead">A comprehensive toolkit spanning enterprise backend systems, modern web client layers,
+            and database architecture.</p>
+        </div>
+
+        <div class="skills-matrix">
+          <!-- Backend & Core Languages -->
+          <div class="skill-category-card md-elevation-1 tilt-3d-card reveal-on-scroll" data-tilt>
+            <div class="category-header">
+              <div class="category-icon-box cat-backend">
+                <span class="material-symbols-outlined">terminal</span>
+              </div>
+              <div class="category-titles">
+                <h3>Backend & Core Languages</h3>
+                <span>Server-side architecture & logic</span>
+              </div>
+            </div>
+            <div class="chips-container">
+              <div class="skill-chip"><i class="fa-brands fa-microsoft"></i> C# (.NET)</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">code</span> ASP.NET MVC</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">api</span> ASP.NET Web API</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">data_object</span> LINQ Querying</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">terminal</span> C & C++</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">view_agenda</span> MVC Framework Expertise
+              </div>
+              <div class="skill-chip"><span class="material-symbols-outlined">construction</span> Code Review &
+                Refactoring</div>
+            </div>
+          </div>
+
+          <!-- Frontend & Modern Web -->
+          <div class="skill-category-card md-elevation-1 tilt-3d-card reveal-on-scroll" data-tilt>
+            <div class="category-header">
+              <div class="category-icon-box cat-frontend">
+                <span class="material-symbols-outlined">devices</span>
+              </div>
+              <div class="category-titles">
+                <h3>Frontend & UI Engineering</h3>
+                <span>Responsive, fluid interfaces</span>
+              </div>
+            </div>
+            <div class="chips-container">
+              <div class="skill-chip"><i class="fa-brands fa-html5"></i> HTML5 & Semantic Web</div>
+              <div class="skill-chip"><i class="fa-brands fa-css3-alt"></i> Modern CSS3 (Flex & Grid)</div>
+              <div class="skill-chip"><i class="fa-brands fa-js"></i> JavaScript (ES6+)</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">code</span> jQuery</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">animation</span> Fluid Web Animations
+              </div>
+              <div class="skill-chip"><span class="material-symbols-outlined">aspect_ratio</span> Responsive Web Design
+              </div>
+              <div class="skill-chip"><span class="material-symbols-outlined">speed</span> Front-End Optimization</div>
+            </div>
+          </div>
+
+          <!-- Databases & Data Architecture -->
+          <div class="skill-category-card md-elevation-1 tilt-3d-card reveal-on-scroll" data-tilt>
+            <div class="category-header">
+              <div class="category-icon-box cat-db">
+                <span class="material-symbols-outlined">database</span>
+              </div>
+              <div class="category-titles">
+                <h3>Databases & Data Modeling</h3>
+                <span>Transactions, indexing & schemas</span>
+              </div>
+            </div>
+            <div class="chips-container">
+              <div class="skill-chip"><span class="material-symbols-outlined">storage</span> Microsoft SQL Server</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">search</span> SQL Querying & Tuning</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">link</span> LINQ to SQL</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">schema</span> Database Management</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">view_column</span> Schema Normalization
+              </div>
+              <div class="skill-chip"><span class="material-symbols-outlined">speed</span> Query Optimization</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">history_edu</span> Transaction Management
+              </div>
+            </div>
+          </div>
+
+          <!-- Tools, OS & Creative Practices -->
+          <div class="skill-category-card md-elevation-1 tilt-3d-card reveal-on-scroll" data-tilt>
+            <div class="category-header">
+              <div class="category-icon-box cat-tools">
+                <span class="material-symbols-outlined">settings_suggest</span>
+              </div>
+              <div class="category-titles">
+                <h3>Environment & Methodologies</h3>
+                <span>DevOps, workflow & design</span>
+              </div>
+            </div>
+            <div class="chips-container">
+              <div class="skill-chip"><i class="fa-brands fa-windows"></i> Windows & Linux Environments</div>
+              <div class="skill-chip"><i class="fa-brands fa-git-alt"></i> Git & GitHub</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">splitscreen</span> Visual Studio &
+                NetBeans</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">cycle</span> Agile & Scrum Practices</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">brush</span> Graphic Design & Photoshop
+              </div>
+              <div class="skill-chip"><span class="material-symbols-outlined">bug_report</span> Software Testing &
+                Resolution</div>
+              <div class="skill-chip"><span class="material-symbols-outlined">psychology</span> Problem Solving Skills
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & HONORS SECTION -->
+    <section id="education" class="education-section section-padding">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle"><span class="material-symbols-outlined">military_tech</span>
+            Qualifications</span>
+          <h2 class="section-title">Education & Accolades</h2>
+          <p class="section-lead">Academic foundations and competitive accomplishments in computer science.</p>
+        </div>
+
+        <div class="edu-awards-grid">
+          <!-- Academic Degrees Timeline -->
+          <div class="academic-cards-wrapper reveal-on-scroll">
+            <!-- Degree 1 -->
+            <div class="academic-card md-card md-elevation-1 tilt-3d-card" data-tilt>
+              <div class="acad-icon-box">
+                <span class="material-symbols-outlined">school</span>
+              </div>
+              <div class="acad-info">
+                <div class="acad-header">
+                  <h4 class="acad-degree">B.Tech in Computer Science & Engineering</h4>
+                  <span class="acad-year">Completed 05/2026</span>
+                </div>
+                <h5 class="acad-institute">Ponnaiyah Ramajayam Institute of Science & Technology (PRIST)</h5>
+                <p class="acad-note">
+                  Core coursework: Data Structures, Database Systems, Software Engineering, Object-Oriented Analysis,
+                  Computer Networks, and Web Application Development.
+                </p>
+              </div>
+            </div>
+
+            <!-- Degree 2 -->
+            <div class="academic-card md-card md-elevation-1 tilt-3d-card" data-tilt>
+              <div class="acad-icon-box">
+                <span class="material-symbols-outlined">account_tree</span>
+              </div>
+              <div class="acad-info">
+                <div class="acad-header">
+                  <h4 class="acad-degree">Senior Secondary (XII) – Computer Science</h4>
+                  <span class="acad-year">Completed 01/2017</span>
+                </div>
+                <h5 class="acad-institute">Indian School, Sur (Sultanate of Oman)</h5>
+                <p class="acad-note">Focused curriculum in C++, Object Oriented Programming, SQL databases, and
+                  computational logic.</p>
+              </div>
+            </div>
+
+            <!-- Degree 3 -->
+            <div class="academic-card md-card md-elevation-1 tilt-3d-card" data-tilt>
+              <div class="acad-icon-box">
+                <span class="material-symbols-outlined">science</span>
+              </div>
+              <div class="acad-info">
+                <div class="acad-header">
+                  <h4 class="acad-degree">Secondary Education (X) – General Science</h4>
+                  <span class="acad-year">Completed 01/2015</span>
+                </div>
+                <h5 class="acad-institute">Indian School, Sur (Sultanate of Oman)</h5>
+                <p class="acad-note">Foundational curriculum in Mathematics, Physical Sciences, and Analytical Problem
+                  Solving.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Subtle Accolade: National Cyber Olympiad -->
+          <div class="award-subtle-card md-card md-elevation-1 reveal-on-scroll">
+            <div class="award-subtle-icon-box">
+              <span class="material-symbols-outlined">military_tech</span>
+            </div>
+            <div class="award-subtle-content">
+              <div class="award-subtle-header">
+                <h4 class="award-subtle-title">National Cyber Olympiad</h4>
+                <span class="award-subtle-tag">Phase 1 Gold Medalist</span>
+              </div>
+              <p class="award-subtle-desc">
+                Awarded Gold Medal in Phase 1 of the National Cyber Olympiad for proficiency in computational logic and
+                analytical problem solving.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section section-padding">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="section-subtitle"><span class="material-symbols-outlined">contact_support</span> Reach Out</span>
+          <h2 class="section-title">Let's Build Something Exceptional</h2>
+          <p class="section-lead">Have an upcoming FinTech project, enterprise need, or want to discuss full-stack
+            opportunities? Reach out anytime!</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Channels Info -->
+          <div class="contact-info-col reveal-on-scroll">
+            <div class="contact-card md-card md-elevation-2">
+              <h3 class="contact-card-title">Contact Channels</h3>
+              <p class="contact-card-desc">
+                I am actively interested in software engineering challenges, system design, and high-impact teams. Feel
+                free to connect via direct email or call.
+              </p>
+
+              <div class="channel-list">
+                <!-- Channel 1: Email -->
+                <div class="channel-item">
+                  <div class="channel-icon-box">
+                    <span class="material-symbols-outlined">alternate_email</span>
+                  </div>
+                  <div class="channel-data">
+                    <span class="channel-title">Direct Email</span>
+                    <a href="mailto:goutham7113@gmail.com" class="channel-link">goutham7113@gmail.com</a>
+                  </div>
+                  <button class="icon-btn ripple-btn copy-btn" data-clipboard="goutham7113@gmail.com"
+                    title="Copy email address" aria-label="Copy email">
+                    <span class="material-symbols-outlined">content_copy</span>
+                  </button>
+                </div>
+
+                <!-- Channel 2: Phone -->
+                <div class="channel-item">
+                  <div class="channel-icon-box">
+                    <span class="material-symbols-outlined">phone_in_talk</span>
+                  </div>
+                  <div class="channel-data">
+                    <span class="channel-title">Phone & WhatsApp</span>
+                    <a href="tel:+917994155476" class="channel-link">+91 7994155476</a>
+                  </div>
+                  <button class="icon-btn ripple-btn copy-btn" data-clipboard="+917994155476" title="Copy phone number"
+                    aria-label="Copy phone number">
+                    <span class="material-symbols-outlined">content_copy</span>
+                  </button>
+                </div>
+
+                <!-- Channel 3: Location -->
+                <div class="channel-item">
+                  <div class="channel-icon-box">
+                    <span class="material-symbols-outlined">location_city</span>
+                  </div>
+                  <div class="channel-data">
+                    <span class="channel-title">Location</span>
+                    <span class="channel-static">Vaikom, Kottayam 686144, Kerala, India</span>
+                  </div>
+                </div>
+
+                <!-- Channel 4: LinkedIn -->
+                <div class="channel-item">
+                  <div class="channel-icon-box linkedin-icon">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </div>
+                  <div class="channel-data">
+                    <span class="channel-title">LinkedIn Profile</span>
+                    <a href="https://www.linkedin.com/in/gouthamkg/" target="_blank" rel="noopener noreferrer"
+                      class="channel-link">linkedin.com/in/gouthamkg</a>
+                  </div>
+                  <a href="https://www.linkedin.com/in/gouthamkg/" target="_blank" rel="noopener noreferrer"
+                    class="icon-btn ripple-btn" aria-label="Open LinkedIn">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                  </a>
+                </div>
+
+                <!-- Channel 5: GitHub -->
+                <div class="channel-item">
+                  <div class="channel-icon-box github-icon">
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div class="channel-data">
+                    <span class="channel-title">GitHub Profile</span>
+                    <a href="https://github.com/gouthamgkg" target="_blank" rel="noopener noreferrer"
+                      class="channel-link">github.com/gouthamgkg</a>
+                  </div>
+                  <a href="https://github.com/gouthamgkg" target="_blank" rel="noopener noreferrer"
+                    class="icon-btn ripple-btn" aria-label="Open GitHub">
+                    <span class="material-symbols-outlined">open_in_new</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Material Form -->
+          <div class="contact-form-col reveal-on-scroll">
+            <div class="form-card md-card md-elevation-2">
+              <h3 class="form-title">Send a Direct Message</h3>
+              <p class="form-subtitle">Fill in the details below and I'll respond within 24 business hours.</p>
+
+              <form id="contact-form" class="md-contact-form" novalidate>
+                <!-- Name Field -->
+                <div class="md-input-field">
+                  <input type="text" id="contact-name" name="name" class="md-input" placeholder=" " required>
+                  <label for="contact-name" class="md-label">Your Full Name *</label>
+                  <span class="field-bar"></span>
+                  <span class="error-msg">Please enter your name</span>
+                </div>
+
+                <!-- Email Field -->
+                <div class="md-input-field">
+                  <input type="email" id="contact-email" name="email" class="md-input" placeholder=" " required>
+                  <label for="contact-email" class="md-label">Your Email Address *</label>
+                  <span class="field-bar"></span>
+                  <span class="error-msg">Please enter a valid email address</span>
+                </div>
+
+                <!-- Subject Field -->
+                <div class="md-input-field">
+                  <input type="text" id="contact-subject" name="subject" class="md-input" placeholder=" " required>
+                  <label for="contact-subject" class="md-label">Subject / Project Requirement *</label>
+                  <span class="field-bar"></span>
+                  <span class="error-msg">Please specify a subject</span>
+                </div>
+
+                <!-- Message Field -->
+                <div class="md-input-field">
+                  <textarea id="contact-message" name="message" class="md-textarea" rows="4" placeholder=" "
+                    required></textarea>
+                  <label for="contact-message" class="md-label">Project Details / Message *</label>
+                  <span class="field-bar"></span>
+                  <span class="error-msg">Please provide your message details</span>
+                </div>
+
+                <button type="submit" class="md-btn md-btn-primary form-submit-btn ripple-btn">
+                  <span class="material-symbols-outlined btn-icon">send</span>
+                  <span class="btn-text">Transmit Message</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <span class="logo-box">GKG</span>
+            <span class="logo-text">Gouthaman K G</span>
+          </div>
+          <p class="footer-tagline">Building robust enterprise platforms and responsive digital experiences.</p>
+        </div>
+
+        <div class="footer-nav">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/in/gouthamkg/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn" class="social-circle-btn ripple-btn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/gouthamgkg" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
+            class="social-circle-btn ripple-btn">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:goutham7113@gmail.com" aria-label="Email" class="social-circle-btn ripple-btn">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year">2026</span> Gouthaman K G. All rights reserved.</p>
+        <p class="footer-credits">Crafted with ❤️ by Gouthaman K G</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Material Floating Action Button (FAB) Speed Dial -->
+  <div class="fab-container" id="fab-container">
+    <div class="fab-menu" id="fab-menu" aria-hidden="true">
+      <button class="fab-item ripple-btn" id="fab-back-top" title="Scroll to Top" aria-label="Scroll to top">
+        <span class="material-symbols-outlined">arrow_upward</span>
+      </button>
+      <a href="https://www.linkedin.com/in/gouthamkg/" target="_blank" rel="noopener noreferrer"
+        class="fab-item ripple-btn" title="LinkedIn Profile" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:goutham7113@gmail.com" class="fab-item ripple-btn" title="Send Email" aria-label="Email">
+        <span class="material-symbols-outlined">mail</span>
+      </a>
+    </div>
+    <button class="fab-main ripple-btn" id="fab-main-btn" aria-label="Quick Actions Menu" title="Quick Actions">
+      <span class="material-symbols-outlined fab-icon">add</span>
+    </button>
+  </div>
+
+  <!-- Material Modal / Dialog: Project Details -->
+  <dialog id="project-dialog" class="md-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-group">
+          <span class="dialog-category-badge" id="dialog-category">Architecture</span>
+          <h3 id="dialog-title" class="dialog-title">Project Title</h3>
+        </div>
+        <button id="dialog-close-btn" class="icon-btn ripple-btn" aria-label="Close dialog">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="dialog-body" id="dialog-body">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="dialog-footer" id="dialog-footer">
+        <button class="md-btn md-btn-tonal ripple-btn" id="dialog-action-btn">Close</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Material Modal: Resume Brief -->
+  <dialog id="resume-dialog" class="md-dialog" aria-labelledby="resume-title">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title-group">
+          <span class="dialog-category-badge">Curriculum Vitae</span>
+          <h3 id="resume-title" class="dialog-title">Gouthaman K G – Executive Summary</h3>
+        </div>
+        <button id="resume-close-btn" class="icon-btn ripple-btn" aria-label="Close resume brief">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+      <div class="dialog-body resume-body">
+        <div class="resume-hero-box">
+          <h4>Gouthaman K G</h4>
+          <p><strong>ASP.Net Software Developer & Web Engineer</strong> | Vaikom, Kottayam, Kerala</p>
+          <p>Contact: goutham7113@gmail.com | +91 7994155476</p>
+        </div>
+        <div class="resume-section-item">
+          <h5>Core Experience</h5>
+          <p><strong>Elioenai Technologies, Kochi</strong> (11/2021 – Present): NBFC, Chitty & NIDHI financial portals,
+            HRMS & Inventory ERP, ticketing systems, third-party REST APIs, and SQL Server performance tuning.</p>
+        </div>
+        <div class="resume-section-item">
+          <h5>Key Stack</h5>
+          <p>C#, ASP.NET MVC, ASP.NET Web API, SQL Server, LINQ, JavaScript, jQuery, HTML5, CSS3, Windows & Linux, Git.
+          </p>
+        </div>
+        <div class="resume-section-item">
+          <h5>Education & Accolades</h5>
+          <p>B.Tech CSE (PRIST University), Senior Secondary & Secondary (Indian School Sur).</p>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <a href="mailto:goutham7113@gmail.com?subject=Interview%20Inquiry%20-%20Gouthaman%20K%20G"
+          class="md-btn md-btn-primary ripple-btn">
+          <span class="material-symbols-outlined">mail</span> Request Full CV
+        </a>
+        <button class="md-btn md-btn-tonal ripple-btn" id="resume-dismiss-btn">Dismiss</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Material Toast / Snackbar Notification -->
+  <div id="md-snackbar" class="md-snackbar" role="status" aria-live="polite">
+    <span class="material-symbols-outlined snackbar-icon" id="snackbar-icon">check_circle</span>
+    <span class="snackbar-text" id="snackbar-text">Notification message</span>
+  </div>
+
+  <!-- Three.js CDN for interactive 3D WebGL Constellation and depth effects -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
