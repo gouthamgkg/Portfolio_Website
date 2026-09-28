@@ -1,0 +1,117 @@
+<svg width="600" height="380" viewBox="0 0 600 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .star-twinkle { animation: starPulse 2.5s infinite ease-in-out; transform-origin: center; transform-box: fill-box; }
+    .star-delay-1 { animation-delay: 0.8s; }
+    .star-delay-2 { animation-delay: 1.5s; }
+    .glow-flow { animation: flowDash 12s linear infinite; }
+    .vault-pulse { animation: pulseVault 4s ease-in-out infinite alternate; }
+    @keyframes starPulse { 0%, 100% { opacity: 0.3; transform: scale(0.85); } 50% { opacity: 1; transform: scale(1.15); } }
+    @keyframes flowDash { to { stroke-dashoffset: -120; } }
+    @keyframes pulseVault { 0% { filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.4)); } 100% { filter: drop-shadow(0 0 24px rgba(99, 102, 241, 0.7)); } }
+  </style>
+
+  <!-- Deep Cosmic Ambient Backdrop -->
+  <rect width="600" height="380" rx="16" fill="#0b1120"/>
+  <circle cx="300" cy="190" r="180" fill="url(#fintech_ambient)" opacity="0.45"/>
+
+  <!-- Geometric Grid Floor -->
+  <g opacity="0.25" stroke="#38bdf8" stroke-width="1">
+    <line x1="80" y1="310" x2="520" y2="310"/>
+    <line x1="120" y1="330" x2="480" y2="330"/>
+    <line x1="160" y1="350" x2="440" y2="350"/>
+    <line x1="120" y1="330" x2="220" y2="280"/>
+    <line x1="480" y1="330" x2="380" y2="280"/>
+    <line x1="300" y1="350" x2="300" y2="280"/>
+  </g>
+
+  <!-- Ambient Twinkling Stars -->
+  <path class="star-twinkle" d="M120 70 L122 76 L128 78 L122 80 L120 86 L118 80 L112 78 L118 76 Z" fill="#38bdf8"/>
+  <path class="star-twinkle star-delay-1" d="M480 85 L481.5 90 L486 91.5 L481.5 93 L480 98 L478.5 93 L474 91.5 L478.5 90 Z" fill="#a5b4fc"/>
+  <path class="star-twinkle star-delay-2" d="M520 180 L521 184 L525 185 L521 186 L520 190 L519 186 L515 185 L519 184 Z" fill="#34d399"/>
+  <circle cx="90" cy="190" r="2" fill="#93c5fd" opacity="0.7"/>
+  <circle cx="510" cy="260" r="2.5" fill="#c084fc" opacity="0.6"/>
+
+  <!-- Financial Dashboard Screen (Backdrop) -->
+  <rect x="140" y="80" width="320" height="200" rx="12" fill="#131c31" stroke="rgba(99, 102, 241, 0.35)" stroke-width="1.5"/>
+  <rect x="140" y="80" width="320" height="28" rx="12" fill="#1e293b"/>
+  <circle cx="160" cy="94" r="4" fill="#ef4444"/>
+  <circle cx="174" cy="94" r="4" fill="#f59e0b"/>
+  <circle cx="188" cy="94" r="4" fill="#10b981"/>
+  <text x="210" y="98" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600">NBFC_CORE_FINANCE.LEDGER</text>
+
+  <!-- Analytics Line Chart on Dashboard -->
+  <path d="M170 210 Q 220 160, 260 180 T 350 140 T 420 120" fill="none" stroke="url(#chart_grad)" stroke-width="3" stroke-linecap="round"/>
+  <path d="M170 210 Q 220 160, 260 180 T 350 140 T 420 120 L 420 230 L 170 230 Z" fill="url(#chart_fill)" opacity="0.25"/>
+
+  <!-- Dashboard Metrics Bars -->
+  <rect x="170" y="240" width="45" height="6" rx="3" fill="#38bdf8" opacity="0.8"/>
+  <rect x="225" y="240" width="60" height="6" rx="3" fill="#818cf8" opacity="0.8"/>
+  <rect x="295" y="240" width="35" height="6" rx="3" fill="#34d399" opacity="0.8"/>
+  <rect x="340" y="240" width="80" height="6" rx="3" fill="#cbd5e1" opacity="0.4"/>
+
+  <!-- Central Digital Banking Vault & Shield -->
+  <g class="vault-pulse">
+    <!-- Vault Outer Bezel -->
+    <circle cx="300" cy="210" r="62" fill="#0f172a" stroke="url(#vault_border)" stroke-width="4"/>
+    <circle cx="300" cy="210" r="50" fill="url(#vault_metal)" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="6 4" class="glow-flow"/>
+    
+    <!-- Vault Wheel / Locking Mechanism -->
+    <circle cx="300" cy="210" r="32" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+    <rect x="296" y="174" width="8" height="72" rx="4" fill="#38bdf8" opacity="0.9"/>
+    <rect x="264" y="206" width="72" height="8" rx="4" fill="#38bdf8" opacity="0.9"/>
+    <circle cx="300" cy="210" r="14" fill="#06b6d4" stroke="#ffffff" stroke-width="2.5"/>
+
+    <!-- Central Security Shield Emblem -->
+    <path d="M295 204 L305 204 C305 204 306 214 300 218 C294 214 295 204 295 204 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- Floating FinTech Credit & Chitty Card (Left) -->
+  <g transform="translate(100, 190) rotate(-10)">
+    <rect width="110" height="68" rx="8" fill="url(#card_grad_1)" stroke="rgba(255, 255, 255, 0.25)" stroke-width="1.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.5))"/>
+    <rect x="12" y="16" width="20" height="15" rx="3" fill="#fbbf24" opacity="0.9"/>
+    <rect x="12" y="44" width="55" height="4" rx="2" fill="#ffffff" opacity="0.8"/>
+    <rect x="12" y="52" width="35" height="3" rx="1.5" fill="#94a3b8"/>
+    <circle cx="90" cy="24" r="8" fill="#ec4899" opacity="0.85"/>
+    <circle cx="82" cy="24" r="8" fill="#f59e0b" opacity="0.85"/>
+  </g>
+
+  <!-- Floating Audit & Currency Badge (Right) -->
+  <g transform="translate(410, 195) rotate(12)">
+    <rect width="105" height="64" rx="10" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.5" filter="drop-shadow(0 8px 16px rgba(0,0,0,0.5))"/>
+    <circle cx="28" cy="32" r="14" fill="#10b981" opacity="0.2"/>
+    <path d="M24 32 L27 35 L33 28" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="48" y="24" width="44" height="5" rx="2.5" fill="#ffffff" opacity="0.9"/>
+    <rect x="48" y="34" width="30" height="4" rx="2" fill="#38bdf8"/>
+    <text x="48" y="50" fill="#a5b4fc" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="700">AUDIT OK</text>
+  </g>
+
+  <defs>
+    <radialGradient id="fintech_ambient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#0b1120" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chart_grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
+    </linearGradient>
+    <linearGradient id="chart_fill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="vault_border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="vault_metal" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </radialGradient>
+    <linearGradient id="card_grad_1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#312e81"/>
+    </linearGradient>
+  </defs>
+</svg>
