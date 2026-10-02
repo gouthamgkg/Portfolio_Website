@@ -778,17 +778,26 @@ body.cursor-hover .cursor-outline {
 
 .hero-role-wrapper {
   display: flex;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
+  line-height: 1.5;
   color: var(--secondary);
   margin-bottom: 24px;
+  min-height: 56px;
 }
 
 .role-prefix {
   color: var(--text-muted);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.dynamic-typing-wrapper {
+  display: inline;
+  color: #38bdf8;
 }
 
 .dynamic-typing {
@@ -799,6 +808,9 @@ body.cursor-hover .cursor-outline {
 .cursor-blink {
   animation: blink 0.9s infinite;
   color: var(--primary-light);
+  font-weight: 400;
+  margin-left: 2px;
+  display: inline-block;
 }
 
 @keyframes blink {
@@ -2976,9 +2988,33 @@ body.cursor-hover .cursor-outline {
   }
 
   .hero-role-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
     font-size: 0.95rem;
-    gap: 6px;
+    min-height: 68px;
     margin-bottom: 18px;
+    text-align: center;
+  }
+
+  .role-prefix {
+    font-size: 0.82rem;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .dynamic-typing-wrapper {
+    display: block;
+    min-height: 42px;
+    line-height: 1.4;
+  }
+
+  .dynamic-typing {
+    font-size: 1rem;
+    color: #38bdf8;
   }
 
   .hero-description {
