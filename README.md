@@ -127,7 +127,6 @@ npx serve .
 - **LinkedIn**: [linkedin.com/in/gouthamkg](https://www.linkedin.com/in/gouthamkg/)
 - **GitHub**: [github.com/gouthamgkg](https://github.com/gouthamgkg)
 - **Email**: [goutham7113@gmail.com](mailto:goutham7113@gmail.com)
-- **Phone**: [+91 7994155476](tel:+917994155476)
 
 ---
 
